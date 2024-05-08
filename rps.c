@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//A simple Rock, Paper, Scissors Code
+//The game might be cringe.. but I had fun so idc loll
+
 int main()
 {
-    int num;
-    char c;
-    int rps, score_diff=0, player=0, computer=0;
+    int num;    //Keeps track of the computer's choice
+    char c;    //Keeps track of the choice of the player to play the game or not
+    int rps, score_diff=0, player=0, computer=0; //rps- the player's choice and the other variables to keep track of amout of wins and losses
 
     srand(3);
     printf("Game rules: \n");
