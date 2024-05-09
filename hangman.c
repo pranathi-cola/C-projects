@@ -5,7 +5,8 @@
 
 void word_selector(char word[]) //To selecte the name of the character
 {
-    srand(time(NULL));
+    time_t t;
+    srand((unsigned) time(&t));
     int num = rand();
     num=num%127;
     num=num+1;
@@ -545,8 +546,9 @@ char hint(char word[], char wtyk[]) //helps the player through finding letters
     }
 }
 
-void hangman(char word[], char wtyk[])  //the game
+int hangman(char word[], char wtyk[])  //the game
 {
+    int win=1;
     int chances = 7;
     char choice;
     char hangmann[8][11];
@@ -554,7 +556,29 @@ void hangman(char word[], char wtyk[])  //the game
     int mode;
     printf("Choose Difficulty Level- 1, 2, 3 (with 3 being the most difficult): ");
     scanf("%d",&mode);
+    while(mode<1 || mode>3)
+    {
+        printf("Enter a valid level pls :]\n");
+        scanf("%d",&mode);
+    }
+    if(mode==2)
+    {
+        win=2;
+    }
+    else if(mode==3)
+    {
+        win=3;
+    }
     hints=4-mode;
+    int len=strlen(word);
+    for(int i=0; i<strlen(word); ++i)
+    {
+        if(word[i]==' ')
+        {
+            len--;
+        }
+    }
+    printf("The character has %d letters in their name\n", len);
     printf("%s\n", wtyk);
     hangmann[0][0]=hangmann[0][10]=' ';
     for(int i=1; i<10; ++i)
@@ -580,7 +604,7 @@ void hangman(char word[], char wtyk[])  //the game
     {
         if(strcmp(word, wtyk)==0)
         {
-            printf("You won!!!\n");
+            printf("You won!!! You gain %d points\n", win);
             break;
         }
         scanf(" %c", &choice);
@@ -635,8 +659,9 @@ void hangman(char word[], char wtyk[])  //the game
     }
     if(chances==0)
     {
+        win=-1;
         hangmann[5][8]='/';
-        printf("\n\n\n...Hangman died.\n");
+        printf("\n\n\n...Hangman died. You lost a point\n");
         for(int i=0; i<8; ++i)
         {
             for(int j=0; j<11; ++j)
@@ -646,7 +671,8 @@ void hangman(char word[], char wtyk[])  //the game
             printf("\n");
         }
     }
-    printf("The character was... %s", word);
+    printf("The character was... %s\n\n", word);
+    return win;
 }
 
 int main()
@@ -658,6 +684,8 @@ int main()
     printf("4. If hangman dies, you lose.\n");
     printf("5. If you need help, press *\n");
     printf("6. The hints are limited. So don't waste them.\n");
+    printf("7. Based on the difficulty level you chose, you will gain points\n");
+    printf("8. If hangman dies, points will be deducted\n");
     printf("\nHave funnn\n\n");
     char * word = malloc(100 * sizeof(char));
     word_selector(word);
@@ -674,6 +702,43 @@ int main()
         }
     }
     wtyk[strlen(word)]='\0';
-    hangman(word, wtyk);
+    char * temp = malloc((strlen(word) + 1) * sizeof(char));
+    for(int i=0; i<=strlen(word); ++i)
+    {
+        temp[i]=wtyk[i];
+    }
+    int score=0;
+    char choice;
+    printf("Do you want to play the game? (y/n): ");
+    scanf("%c",&choice);
+    while(choice!='n' && choice!='N')
+    {
+        for(int i=0; i<strlen(word); ++i)
+        {
+            if(word[i]==' ')
+            {
+                wtyk[i]=' ';
+            }
+            else
+            {
+                wtyk[i]='_';
+            }
+        }
+        wtyk[strlen(word)]='\0';
+        if(choice!='y' && choice!='Y')
+        {
+            printf("Enter a valid choice please...\n");
+        }
+        else
+        {
+            score+=hangman(word, wtyk);
+        }
+        printf("Your current score is %d.\nDo you want to play the game again? (y/n): ", score);
+        scanf(" %c",&choice);
+        char * c = malloc(100 * sizeof(char));
+        word_selector(c);
+        strcpy(word, c);
+    }
+    printf("\n\nYour final score is %d\n", score);
     return 0;
 }
