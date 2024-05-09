@@ -399,7 +399,7 @@ void word_selector(char word[]) //To selecte the name of the character
     }
     else if(num==98)
     {
-        strcpy(word, "Shang-Chi");
+        strcpy(word, "Shang Chi");
     }
     else if(num==99)
     {
