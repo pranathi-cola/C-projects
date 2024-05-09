@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,7 +11,7 @@ int main()
     char c;    //Keeps track of the choice of the player to play the game or not
     int rps, score_diff=0, player=0, computer=0; //rps- the player's choice and the other variables to keep track of amout of wins and losses
 
-    srand(3);
+    srand(time(NULL));
     printf("Game rules: \n");
     printf("1. Enter a valid choice else you will be disqualified.\n");
     printf("2. These are the game conventions that should be followed:\n");
