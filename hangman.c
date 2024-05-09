@@ -1,172 +1,523 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 void word_selector(char word[]) //To selecte the name of the character
 {
-    srand(2);
+    srand(time(NULL));
     int num = rand();
-    num=(num%40)+1;
+    num=num%127;
+    num=num+1;
     if(num==1)
     {
-        strcpy(word, "Akush");
+        strcpy(word, "Ant Man");
     }
     else if(num==2)
     {
-        strcpy(word, "Alicia Termina Magentano");
+        strcpy(word, "Abomination");
     }
     else if(num==3)
     {
-        strcpy(word, "Allop");
+        strcpy(word, "Agatha Harkness");
     }
     else if(num==4)
     {
-        strcpy(word, "Arcos Frontera");
+        strcpy(word, "Ancient One");
     }
     else if(num==5)
     {
-        strcpy(word, "Arosh");
+        strcpy(word, "Ben Parker");
     }
     else if(num==6)
     {
-        strcpy(word, "Bangul");
+        strcpy(word, "Baron Zemo");
     }
     else if(num==7)
     {
-        strcpy(word, "Bayern");
+        strcpy(word, "Black Bolt");
     }
     else if(num==8)
     {
-        strcpy(word, "Bibeong");
+        strcpy(word, "Betty Ross");
     }
     else if(num==9)
     {
-        strcpy(word, "Cheong Sim");
+        strcpy(word, "Black Panther");
     }
     else if(num==10)
     {
-        strcpy(word, "Christine Cremo");
+        strcpy(word, "Black Widow");
     }
     else if(num==11)
     {
-        strcpy(word, "Emily");
+        strcpy(word, "Bruce Banner");
     }
     else if(num==12)
     {
-        strcpy(word, "Ggoming");
+        strcpy(word, "Cable");
     }
     else if(num==13)
     {
-        strcpy(word, "Greg");
+        strcpy(word, "Captain America");
     }
     else if(num==14)
     {
-        strcpy(word, "Hamang");
+        strcpy(word, "Carnage");
     }
     else if(num==15)
     {
-        strcpy(word, "Javier Asrahan");
+        strcpy(word, "Carol Danvers");
     }
     else if(num==16)
     {
-        strcpy(word, "Jinwoo");
+        strcpy(word, "Chitauri");
     }
     else if(num==17)
     {
-        strcpy(word, "Julian Frontera");
+        strcpy(word, "Colossus");
     }
     else if(num==18)
     {
-        strcpy(word, "Lloyd Frontera");
+        strcpy(word, "Cyclops");
     }
     else if(num==19)
     {
-        strcpy(word, "Lupellan");
+        strcpy(word, "Clint Barton");
     }
     else if(num==20)
     {
-        strcpy(word, "Manticore");
+        strcpy(word, "Daredevil");
     }
     else if(num==21)
     {
-        strcpy(word, "Marbella Frontera");
+        strcpy(word, "Deadpool");
     }
     else if(num==22)
     {
-        strcpy(word, "Meatloaf");
+        strcpy(word, "Deke Shaw");
     }
     else if(num==23)
     {
-        strcpy(word, "Mellica");
+        strcpy(word, "Doctor Octopus");
     }
     else if(num==24)
     {
-        strcpy(word, "Michael");
+        strcpy(word, "Doctor Strange");
     }
     else if(num==25)
     {
-        strcpy(word, "Moira");
+        strcpy(word, "Dormamu");
     }
     else if(num==26)
     {
-        strcpy(word, "Neumann");
+        strcpy(word, "Doctor Doom");
     }
     else if(num==27)
     {
-        strcpy(word, "Ppodong");
+        strcpy(word, "Echo");
     }
     else if(num==28)
     {
-        strcpy(word, "Ramos");
+        strcpy(word, "Falcon");
     }
     else if(num==29)
     {
-        strcpy(word, "Ruria");
+        strcpy(word, "Fred Flash Thompson");
     }
     else if(num==30)
     {
-        strcpy(word, "Serajard");
+        strcpy(word, "Gamora");
     }
     else if(num==31)
     {
-        strcpy(word, "Shiloh");
+        strcpy(word, "Ghost Rider");
     }
     else if(num==32)
     {
-        strcpy(word, "Siluria Namaran");
+        strcpy(word, "Yellowjacket");
     }
     else if(num==33)
     {
-        strcpy(word, "Solitas");
+        strcpy(word, "Green Goblin");
     }
     else if(num==34)
     {
-        strcpy(word, "Suho Kim");
+        strcpy(word, "Gwen Stacy");
     }
     else if(num==35)
     {
-        strcpy(word, "System");
+        strcpy(word, "Groot");
     }
     else if(num==36)
     {
-        strcpy(word, "Tordes");
+        strcpy(word, "Gilgamesh");
     }
     else if(num==37)
     {
-        strcpy(word, "Tyranus");
+        strcpy(word, "Hawkeye");
     }
     else if(num==38)
     {
-        strcpy(word, "Verkis");
+        strcpy(word, "Heimdall");
     }
     else if(num==39)
     {
-        strcpy(word, "Victor");
+        strcpy(word, "Hela");
     }
     else if(num==40)
     {
-        strcpy(word, "Wels Corgidus");
+        strcpy(word, "He who remains");
     }
+    else if(num==41)
+    {
+        strcpy(word, "Hobgoblin");
+    }
+    else if(num==42)
+    {
+        strcpy(word, "Harry Osborn");
+    }
+    else if(num==43)
+    {
+        strcpy(word, "Howard the Duck");
+    }
+    else if(num==44)
+    {
+        strcpy(word, "Hulk");
+    }
+    else if(num==45)
+    {
+        strcpy(word, "Human Torch");
+    }
+    else if(num==46)
+    {
+        strcpy(word, "Howard Stark");
+    }
+    else if(num==47)
+    {
+        strcpy(word, "Iceman");
+    }
+    else if(num==48)
+    {
+        strcpy(word, "Iron Fist");
+    }
+    else if(num==49)
+    {
+        strcpy(word, "Iron Man");
+    }
+    else if(num==50)
+    {
+        strcpy(word, "James Rupert Jim Rhodes");
+    }
+    else if(num==51)
+    {
+        strcpy(word, "War Machine");
+    }
+    else if(num==52)
+    {
+        strcpy(word, "James Buchanan Bucky Barnes");
+    }
+    else if(num==53)
+    {
+        strcpy(word, "Jane Foster");
+    }
+    else if(num==54)
+    {
+        strcpy(word, "Janet van Dyne");
+    }
+    else if(num==55)
+    {
+        strcpy(word, "Jarvis, Edwin");
+    }
+    else if(num==56)
+    {
+        strcpy(word, "Jennifer Walters");
+    }
+    else if(num==57)
+    {
+        strcpy(word, "Jessica Jones");
+    }
+    else if(num==58)
+    {
+        strcpy(word, "Justin Hammer");
+    }
+    else if(num==59)
+    {
+        strcpy(word, "J Jonah Jameson");
+    }
+    else if(num==60)
+    {
+        strcpy(word, "Kang the Conqueror");
+    }
+    else if(num==61)
+    {
+        strcpy(word, "Kingpin");
+    }
+    else if(num==62)
+    {
+        strcpy(word, "Kree");
+    }
+    else if(num==63)
+    {
+        strcpy(word, "Korg");
+    }
+    else if(num==64)
+    {
+        strcpy(word, "Kate Bishop");
+    }
+    else if(num==65)
+    {
+        strcpy(word, "Kate Bishop");
+    }
+    else if(num==66)
+    {
+        strcpy(word, "Lizard");
+    }
+    else if(num==67)
+    {
+        strcpy(word, "Loki");
+    }
+    else if(num==68)
+    {
+        strcpy(word, "Mary Parker");
+    }
+    else if(num==69)
+    {
+        strcpy(word, "Mary Jane Watson");
+    }
+    else if(num==70)
+    {
+        strcpy(word, "May Parker");
+    }
+    else if(num==71)
+    {
+        strcpy(word, "Miles Morales");
+    }
+    else if(num==72)
+    {
+        strcpy(word, "Ms Marvel");
+    }
+    else if(num==73)
+    {
+        strcpy(word, "MODOK");
+    }
+    else if(num==74)
+    {
+        strcpy(word, "Morbius");
+    }
+    else if(num==75)
+    {
+        strcpy(word, "Moon Knight");
+    }
+    else if(num==76)
+    {
+        strcpy(word, "Mysterio");
+    }
+    else if(num==77)
+    {
+        strcpy(word, "Makkari");
+    }
+    else if(num==78)
+    {
+        strcpy(word, "Michelle Jones-Watson");
+    }
+    else if(num==79)
+    {
+        strcpy(word, "Nebula");
+    }
+    else if(num==80)
+    {
+        strcpy(word, "Nick Fury");
+    }
+    else if(num==81)
+    {
+        strcpy(word, "Odin");
+    }
+    else if(num==82)
+    {
+        strcpy(word, "Okoye");
+    }
+    else if(num==83)
+    {
+        strcpy(word, "Paladin");
+    }
+    else if(num==84)
+    {
+        strcpy(word, "Phil Coulson");
+    }
+    else if(num==85)
+    {
+        strcpy(word, "Peter Parker");
+    }
+    else if(num==86)
+    {
+        strcpy(word, "Peter Quill");
+    }
+    else if(num==87)
+    {
+        strcpy(word, "Pietro Maximoff");
+    }
+    else if(num==88)
+    {
+        strcpy(word, "Quicksilver");
+    }
+    else if(num==89)
+    {
+        strcpy(word, "Ralph Bohner");
+    }
+    else if(num==90)
+    {
+        strcpy(word, "Red Skull");
+    }
+    else if(num==91)
+    {
+        strcpy(word, "RHINO");
+    }
+    else if(num==92)
+    {
+        strcpy(word, "Richard Parker");
+    }
+    else if(num==93)
+    {
+        strcpy(word, "Rocket Raccoon");
+    }
+    else if(num==94)
+    {
+        strcpy(word, "Ronan the Accuser");
+    }
+    else if(num==95)
+    {
+        strcpy(word, "Sandman");
+    }
+    else if(num==96)
+    {
+        strcpy(word, "Scarlet Witch");
+    }
+    else if(num==97)
+    {
+        strcpy(word, "Sersi");
+    }
+    else if(num==98)
+    {
+        strcpy(word, "Shang-Chi");
+    }
+    else if(num==99)
+    {
+        strcpy(word, "Skrull");
+    }
+    else if(num==100)
+    {
+        strcpy(word, "Sebastian Shaw");
+    }
+    else if(num==101)
+    {
+        strcpy(word, "SpiderGirl");
+    }
+    else if(num==102)
+    {
+        strcpy(word, "SpiderMan");
+    }
+    else if(num==103)
+    {
+        strcpy(word, "StarLord");
+    }
+    else if(num==104)
+    {
+        strcpy(word, "Sylvie");
+    }
+    else if(num==105)
+    {
+        strcpy(word, "Steven strange");
+    }
+    else if(num==106)
+    {
+        strcpy(word, "Thanos");
+    }
+    else if(num==107)
+    {
+        strcpy(word, "Thing");
+    }
+    else if(num==108)
+    {
+        strcpy(word, "Thor");
+    }
+    else if(num==109)
+    {
+        strcpy(word, "Tony Stark");
+    }
+    else if(num==110)
+    {
+        strcpy(word, "Ultron");
+    }
+    else if(num==111)
+    {
+        strcpy(word, "The Watcher");
+    }
+    else if(num==112)
+    {
+        strcpy(word, "Uatu");
+    }
+    else if(num==113)
+    {
+        strcpy(word, "Valkyrie");
+    }
+    else if(num==114)
+    {
+        strcpy(word, "Venom");
+    }
+    else if(num==115)
+    {
+        strcpy(word, "Vision");
+    }
+    else if(num==116)
+    {
+        strcpy(word, "Vulture");
+    }
+    else if(num==117)
+    {
+        strcpy(word, "Wasp");
+    }
+    else if(num==118)
+    {
+        strcpy(word, "Winter Soldier");
+    }
+    else if(num==119)
+    {
+        strcpy(word, "Wolverine");
+    }
+    else if(num==120)
+    {
+        strcpy(word, "Jimmy Woo");
+    }
+    else if(num==121)
+    {
+        strcpy(word, "Wong");
+    }
+    else if(num==122)
+    {
+        strcpy(word, "Wanda Maximoff");
+    }
+    else if(num==123)
+    {
+        strcpy(word, "Adam Warlock");
+    }
+    else if(num==124)
+    {
+        strcpy(word, "Xman");
+    }
+    else if(num==125)
+    {
+        strcpy(word, "Yelena Belova");
+    }
+    else if(num==126)
+    {
+        strcpy(word, "Yondu");
+    }
+    else if(num==127)
+    {
+        strcpy(word, "Zeus");
+    }
+    
 }
 
 int word_present(char c, char word[], char wtyk[]) //checks if the letter is present in the word or name
@@ -296,7 +647,7 @@ void hangman(char word[], char wtyk[])  //the game
 int main()
 {
     printf("Game Rules: \n");
-    printf("1. You have to guess letters in the randomly generated character's from the comic, The Greatest Estate Developer\n");
+    printf("1. You have to guess letters in the randomly generated character's from the MCU\n");
     printf("2. If you choose a wrong word, hangman will get closer to dying\n");
     printf("3. If you get the word right, the position of the word in the name will be displayed\n");
     printf("4. If hangman dies, you lose.\n");
