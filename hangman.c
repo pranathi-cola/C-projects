@@ -550,7 +550,12 @@ void hangman(char word[], char wtyk[])  //the game
     int chances = 7;
     char choice;
     char hangmann[8][11];
-    int hints=3;
+    int hints;
+    int mode;
+    printf("Choose Difficulty Level- 1, 2, 3 (with 3 being the most difficult): ");
+    scanf("%d",&mode);
+    hints=4-mode;
+    printf("%s\n", wtyk);
     hangmann[0][0]=hangmann[0][10]=' ';
     for(int i=1; i<10; ++i)
     {
@@ -647,7 +652,7 @@ void hangman(char word[], char wtyk[])  //the game
 int main()
 {
     printf("Game Rules: \n");
-    printf("1. You have to guess letters in the randomly generated character's from the MCU\n");
+    printf("1. You have to guess letters in the randomly generated character's from MCU\n");
     printf("2. If you choose a wrong word, hangman will get closer to dying\n");
     printf("3. If you get the word right, the position of the word in the name will be displayed\n");
     printf("4. If hangman dies, you lose.\n");
@@ -669,7 +674,6 @@ int main()
         }
     }
     wtyk[strlen(word)]='\0';
-    printf("%s\n", wtyk);
     hangman(word, wtyk);
     return 0;
 }
