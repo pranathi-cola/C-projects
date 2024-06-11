@@ -215,10 +215,12 @@ int divide(char question[], int low, int high, int part)
 
 int calculator(char question[], int low, int high)
 {
+    bool isnumber=true;
     for(int i=low; i<high; ++i)
     {
         if(question[i]=='+')
         {
+            isnumber = false;
             int result = add(question, low, high, i);
             return result;
         }
@@ -227,6 +229,7 @@ int calculator(char question[], int low, int high)
     {
         if(question[i]=='-')
         {
+            isnumber = false;
             int result = sub(question, low, high, i);
             return result;
         }
@@ -235,6 +238,7 @@ int calculator(char question[], int low, int high)
     {
         if(question[i]=='*')
         {
+            isnumber = false;
             int result = multiply(question, low, high, i);
             return result;
         }
@@ -243,10 +247,17 @@ int calculator(char question[], int low, int high)
     {
         if(question[i]=='/')
         {
+            isnumber = false;
             int result = divide(question, low, high, i);
             return result;
         }
     }
+    int result=0;
+    for(int i=low; i<high; ++i)
+    {
+        result=result*10+(question[i]);
+    }
+    return result;
 }
 
 int main()
