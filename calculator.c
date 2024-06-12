@@ -35,7 +35,6 @@ float sub(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d sub\n", left, right);
         return (float)left-right;
     }
     else if(leftisnumber && !rightisnumber)
@@ -57,7 +56,6 @@ float sub(char ques[], int low, int high, int part)
             }
         }
         float right=calculator(ques, part+1, high);
-        printf("%d %d sub\n", left, right);
         return left-right;
     }
     else if(!leftisnumber && rightisnumber)
@@ -68,7 +66,6 @@ float sub(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d sub\n", left, right);
         return left-right;
     }
     else
@@ -86,7 +83,6 @@ float sub(char ques[], int low, int high, int part)
             }
         }
         float right=calculator(ques, part+1, high);
-        printf("%d %d sub\n", left, right);
         return left-right;
     }
 }
@@ -121,7 +117,6 @@ float add(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d add\n", left, right);
         return (float)left+right;
     }
     else if(leftisnumber && !rightisnumber)
@@ -132,7 +127,6 @@ float add(char ques[], int low, int high, int part)
         {
             left=left*10+(ques[i]-'0');
         }
-        printf("%d %d add\n", left, right);
         return left+right;
     }
     else if(!leftisnumber && rightisnumber)
@@ -143,14 +137,12 @@ float add(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d add\n", left, right);
         return left+right;
     }
     else
     {
         float left=calculator(ques, low, part);
         float right=calculator(ques, part+1, high);
-        printf("%d %d add\n", left, right);
         return left+right;
     }
 }
@@ -185,7 +177,6 @@ float multiply(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d multiply\n", left, right);
         return (float)left*right;
     }
     else if(leftisnumber && !rightisnumber)
@@ -196,7 +187,6 @@ float multiply(char ques[], int low, int high, int part)
         {
             left=left*10+(ques[i]-'0');
         }
-        printf("%d %d multiply\n", left, right);
         return left*right;
     }
     else if(!leftisnumber && rightisnumber)
@@ -207,14 +197,12 @@ float multiply(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d multiply\n", left, right);
         return left*right;
     }
     else
     {
         float left=calculator(ques, low, part);
         float right=calculator(ques, part+1, high);
-        printf("%d %d multiply\n", left, right);
         return left*right;
     }
 }
@@ -250,7 +238,6 @@ float div(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d div\n", left, right);
         return left/(float)right;
     }
     else if(leftisnumber && !rightisnumber)
@@ -272,7 +259,6 @@ float div(char ques[], int low, int high, int part)
             }
         }
         float right=calculator(ques, part+1, high);
-        printf("%d %d div\n", left, right);
         return left/right;
     }
     else if(!leftisnumber && rightisnumber)
@@ -283,7 +269,6 @@ float div(char ques[], int low, int high, int part)
         {
             right=right*10+(ques[i]-'0');
         }
-        printf("%d %d div\n", left, right);
         return left/right;
     }
     else
@@ -301,14 +286,12 @@ float div(char ques[], int low, int high, int part)
             }
         }
         float right=calculator(ques, part+1, high);
-        printf("%d %d div\n", left, right);
         return left/right;
     }
 }
 
 float calculator(char ques[], int low, int high)
 {
-    printf("%s\n",ques);
     bool isnumber = true;
     for(int i=low; i<high; ++i)
     {
