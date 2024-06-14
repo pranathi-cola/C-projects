@@ -246,7 +246,7 @@ int obstacles(int pos)
     else if(pos==91)
     {
         printf("You encountered a bee hive. \n");
-        draw_beehive;
+        draw_beehive();
         return 71;
     }
     else if(pos==86)
@@ -437,6 +437,7 @@ void game()
     bool thereisawinner = false;
     while(!thereisawinner)
     {
+        char winner[100];
         for(int i=0; i<n; ++i)
         {
             printf("%s",name[i]);
@@ -453,7 +454,7 @@ void game()
             if(score[i]==100)
             {
                 thereisawinner=true;
-                printf("%s has won!!!\n", name[i]);
+                strcpy(winner, name[i]);
                 break;
             }
             if(thereisawinner)
@@ -463,6 +464,26 @@ void game()
         }
         if(thereisawinner)
         {
+            printf(" ");
+            for(int i=0; i<13+strlen(winner); ++i)
+            {
+                printf("_");
+            }
+            printf("\n|");
+            for(int i=0; i<13+strlen(winner); ++i)
+            {
+                printf(" ");
+            }
+            printf("|\n");
+            printf("| ");
+            printf("%s has won!!! |\n", winner);
+            printf("|");
+            for(int i=0; i<13+strlen(winner); ++i)
+            {
+                printf("_");
+            }
+            printf("|\n");
+            winner[0]='\0';
             break;
         }
     }
